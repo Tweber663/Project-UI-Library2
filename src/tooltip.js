@@ -1,3 +1,26 @@
-const tip = "hello from tooltip"
+class ToolTip {
+    constructor(element) {
+        this.element = element
+        this.attribute = element.getAttribute('data-message');
+    }
 
-export {tip}
+    init() {
+        const tip = document.createElement('div');
+        tip.classList.add('tip');
+        tip.textContent = this.attribute; 
+        this.element.appendChild(tip);
+
+        this.element.addEventListener("mouseenter", () => {
+            tip.classList.add("active");
+        })
+
+        this.element.addEventListener("mouseleave", () => {
+            tip.classList.remove("active")
+        })
+    }
+
+
+}
+
+
+export {ToolTip}

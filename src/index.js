@@ -1,3 +1,6 @@
-import { tip } from "./toolTip";
+import { ToolTip } from "./toolTip";
 
-console.log(tip)
+
+const toolTipElement = new ToolTip(document.querySelector(".tool-tip"));
+
+toolTipElement.init()
