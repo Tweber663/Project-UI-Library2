@@ -31,3 +31,49 @@
     text-align: center;
   }
   
+
+  // --------------- Tooltip 
+
+.tool-tip {
+    display: inline-block;
+    background-color: orange;
+    border: 1px dotted orange;
+    border-radius: 3px;
+    position: relative;
+    cursor: help
+}
+
+.tip { 
+  visibility: hidden;
+  width: max-content;
+  opacity: 1;
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.active {
+ visibility: visible;
+ opacity: 1;
+ transition: opacity 0.3s;
+ background-color: rgb(255, 255, 255);
+ border: 2px dotted orange;
+ border-radius: 4px;
+ padding: 0 5px;
+ box-shadow: 5px 5px 5px rgb(183, 183, 183);
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -4px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: orange;
+
+}
